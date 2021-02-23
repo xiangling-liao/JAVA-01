@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+
+    <bean id="compactDisc01" class="soundsystem4.mixandmatch.entity.SgtPeppers">
+        <constructor-arg value="Sgt. Pepper's Lonely Hearts Club Band" />
+        <constructor-arg value="The Beatles" />
+    </bean>
+
+    <bean id="compactDisc02" class="soundsystem4.mixandmatch.entity.BlankDisc">
+        <constructor-arg value="Sgt. Pepper's Lonely Hearts Club Band" />
+        <constructor-arg value="The Beatles" />
+        <constructor-arg>
+            <list>
+                <value>Sgt. Pepper's Lonely Hearts Club Band</value>
+                <value>With a Little Help from My Friends</value>
+                <value>Lucy in the Sky with Diamonds</value>
+                <value>Getting Better</value>
+                <value>Fixing a Hole</value>
+                <!-- ...other tracks omitted for brevity... -->
+            </list>
+        </constructor-arg>
+    </bean>
+
+</beans>

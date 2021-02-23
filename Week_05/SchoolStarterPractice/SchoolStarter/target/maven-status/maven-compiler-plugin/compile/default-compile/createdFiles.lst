@@ -1,0 +1,7 @@
+com/iris/entity/Student.class
+com/iris/properties/StudentProperties.class
+com/iris/entity/School.class
+com/iris/entity/ISchool.class
+com/iris/entity/Klass.class
+com/iris/autoconfigure/school/SchoolAutoConfiguration.class
+com/iris/Application.class

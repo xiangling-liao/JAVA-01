@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+
+    <bean id="compactDisc01" class="soundsystem3.xml.entity.SgtPeppers">
+        <constructor-arg value="Sgt. Pepper's Lonely Hearts Club Band" />
+        <constructor-arg value="The Beatles" />
+    </bean>
+
+<!--    <bean id="compactDisc02" class="soundsystem.BlankDisc">-->
+<!--        <constructor-arg value="Sgt. Pepper's Lonely Hearts Club Band" />-->
+<!--        <constructor-arg value="The Beatles" />-->
+<!--&lt;!&ndash;        configure a collection/the simplest is to pass a null/a dirty fix, don't use this&ndash;&gt;-->
+<!--        <constructor-arg><null/></constructor-arg>-->
+<!--    </bean>-->
+
+    <bean id="compactDisc02" class="soundsystem3.xml.entity.BlankDisc">
+        <constructor-arg value="Sgt. Pepper's Lonely Hearts Club Band" />
+        <constructor-arg value="The Beatles" />
+        <constructor-arg>
+            <list>
+                <value>Sgt. Pepper's Lonely Hearts Club Band</value>
+                <value>With a Little Help from My Friends</value>
+                <value>Lucy in the Sky with Diamonds</value>
+                <value>Getting Better</value>
+                <value>Fixing a Hole</value>
+                <!-- ...other tracks omitted for brevity... -->
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="cdPlayer-xml" class="soundsystem3.xml.entity.CDPlayer">
+        <constructor-arg ref="compactDisc02" />
+
+<!--        use property injection instead[thumb of rule, use ctor injection for hard dependency, use property
+injection for optional dependency]-->
+<!--        <property name="compactDisc" ref="compactDisc" />-->
+    </bean>
+
+<!--    a more succint namespace for specifying ctor arg-->
+<!--    xmlns:c="http://www.springframework.org/schema/c"-->
+<!--    <bean id="cdPlayer" class="soundsystem.CDPlayer"-->
+<!--          c:cd-ref="compactDisc" />-->
+</beans>
